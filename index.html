@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Dash</title>
+	<script src="js/jquery-1.10.2.js"> </script>
+	<script src="js/js.js"></script>
+	<LINK href="css/styles.css" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<link href="css/bootstrap.min.css" rel="stylesheet">
+ 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+ 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="bootstrap/assets/js/html5shiv.js"></script>
+    	<script src="bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body onload="refresh()">
+	<div class="container">
+	<div class="page-header">
+		<h1>The Dash <small>Lightweight dashboard for SickBeard</small></h1>
+		<div>
+			<div class="aligncenter">
+				Check viewed episodes off by clicking them. Everything presented as "Show name - Season x Episode."
+			</div><!-- Use the play-button to the left of the episode to play it. (to be implemented-->
+			
+			<ul class="nav nav-pills">
+				<li class="active">
+					<button type="button" class="alignleft btn btn-default btn-lg" onClick="refresh()">
+						<span class="glyphicon glyphicon-refresh"></span>
+					</button>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						Services <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a role="menuitem" tabindex="0" target="_blank" href="http://10.0.0.9:8081">SichBeard</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="1" target="_blank" href="http://10.0.0.9:5050">CouchPotato</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="2" target="_blank" href="http://10.0.0.9:8080">SABnzdb</a></li>
+					</ul>
+				</li>
+				<!-- Button trigger modal -->
+		  		<a data-toggle="modal" href="#settings-modal" class="alignright btn btn-default btn-lg">Settings</a>
+			</ul>
+		</div>
+	</div>
+	<div id="aligncenter log"></div>
+	<div class="row">
+		<div id="rows" class="col-md-6">
+			<h2>Downloaded episodes</h2>
+			<div id="history"> </div>
+		</div>
+		<div id="rows" class="col-md-6">
+			<h2>Upcoming episodes</h2>
+			<div id="upcoming"> </div>
+		</div>
+	</div>
+	</div> <!-- Ends container -->
+</body>
+<!-- Settings-modal -->
+	<div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title">Settings</h4>
+		</div>
+		<div class="modal-body">
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">Host</span> 
+				<input type="text" class="form-control">
+			</div>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">Port</span>
+				<input type="text" class="form-control"><br>
+			</div>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">API-key</span> 
+				<input type="text" class="form-control"><br>
+			</div>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">Limit for history</span> 
+				<input type="text" class="form-control"><br>
+			</div>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">Refresh-rate (minutes)</span> 
+				<input type="text" class="form-control"><br>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary" onClick="changeSettings()">Save changes</button>
+		</div>
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+<div id="footer">
+	Powered by <a href="http://jquery.com">jQuery</a>, <a href="http://getbootstrap.com"> Bootstrap </a> and <a href="http://glyphicons.com">Glyphicons</a>.
+	<br>Made by <a href="mailto:steinotto.svorstol@gmail.com">Esso</a>
+</div>
+</html>
