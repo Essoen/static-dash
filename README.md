@@ -1,6 +1,6 @@
 The Dash
 ====
-A simple single-page application that works as a dashboard for SickBeard.
+A simple single-page application that works as a dashboard for SickBeard. Later reimplemented i Meteor, see [this repository](http://github.com/Essoen/Dash).
 
 ### Features
 - Lists upcoming and downloaded episodes from SickBeard
@@ -8,4 +8,4 @@ A simple single-page application that works as a dashboard for SickBeard.
 - Lets you open the downloaded episodes directly in VLC (or other software) (to be implemented)
 - Let's you check off the episodes you've seen (not finished)
 
-Powered by jQuery, Bootstrap and Glyphicons, and made by [Esso](https://www.essoen.net).
+Powered by jQuery, Bootstrap and Glyphicons. 
